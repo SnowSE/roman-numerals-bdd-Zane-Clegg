@@ -19,7 +19,7 @@ namespace TestingRomanizing.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("SpecFlowFeature1", Description="\tSimple calculator for adding two numbers", SourceFile="Features\\Romanizing.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("SpecFlowFeature1", SourceFile="Features\\Romanizing.feature", SourceLine=0)]
     public partial class SpecFlowFeature1Feature
     {
         
@@ -34,7 +34,7 @@ namespace TestingRomanizing.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SpecFlowFeature1", "\tSimple calculator for adding two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SpecFlowFeature1", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,15 +70,15 @@ namespace TestingRomanizing.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Simple 2000", new string[] {
-                "mytag"}, SourceLine=4)]
-        public virtual void Simple2000()
+        public virtual void RomanTests(string rawinput, string stringform, string junk, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
-                    "mytag"};
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Simple 2000", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+            argumentsOfScenario.Add("rawinput", rawinput);
+            argumentsOfScenario.Add("stringform", stringform);
+            argumentsOfScenario.Add("junk", junk);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Roman Tests", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 2
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -98,17 +98,33 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
- testRunner.Given("input of 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 3
+ testRunner.Given(string.Format("input of number {0}", rawinput), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 4
  testRunner.When("converted to Roman numerals", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
- testRunner.Then("the result should be MM", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 5
+ testRunner.Then(string.Format("Result should be Romanlanguage \"{0}\"", stringform), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 3", SourceLine=8)]
+        public virtual void RomanTests_3()
+        {
+#line 2
+this.RomanTests("3", "iii", "", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 4", SourceLine=8)]
+        public virtual void RomanTests_4()
+        {
+#line 2
+this.RomanTests("4", "iv", "", ((string[])(null)));
+#line hidden
         }
     }
 }

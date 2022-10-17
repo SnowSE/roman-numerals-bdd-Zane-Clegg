@@ -1,8 +1,10 @@
 ﻿Feature: SpecFlowFeature1
-	Simple calculator for adding two numbers
-
-@mytag
-Scenario: Simple 2000
-	Given input of 2000
+Scenario Outline: Roman Tests
+	Given input of number <rawinput>
 	When converted to Roman numerals
-	Then the result should be MM
+	Then Result should be Romanlanguage "<stringform>"
+Examples: 
+
+| rawinput | stringform | junk |
+| 3        | iii        |      |
+| 4        | iv         |      |
