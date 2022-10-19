@@ -70,13 +70,12 @@ namespace TestingRomanizing.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void RomanTests(string rawinput, string stringform, string junk, string[] exampleTags)
+        public virtual void RomanTests(string rawinput, string stringform, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("rawinput", rawinput);
             argumentsOfScenario.Add("stringform", stringform);
-            argumentsOfScenario.Add("junk", junk);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Roman Tests", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 2
 this.ScenarioInitialize(scenarioInfo);
@@ -115,7 +114,7 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void RomanTests_3()
         {
 #line 2
-this.RomanTests("3", "iii", "", ((string[])(null)));
+this.RomanTests("3", "iii", ((string[])(null)));
 #line hidden
         }
         
@@ -123,7 +122,151 @@ this.RomanTests("3", "iii", "", ((string[])(null)));
         public virtual void RomanTests_4()
         {
 #line 2
-this.RomanTests("4", "iv", "", ((string[])(null)));
+this.RomanTests("4", "iv", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 5", SourceLine=8)]
+        public virtual void RomanTests_5()
+        {
+#line 2
+this.RomanTests("5", "v", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 6", SourceLine=8)]
+        public virtual void RomanTests_6()
+        {
+#line 2
+this.RomanTests("6", "vi", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 8", SourceLine=8)]
+        public virtual void RomanTests_8()
+        {
+#line 2
+this.RomanTests("8", "viii", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 9", SourceLine=8)]
+        public virtual void RomanTests_9()
+        {
+#line 2
+this.RomanTests("9", "ix", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 10", SourceLine=8)]
+        public virtual void RomanTests_10()
+        {
+#line 2
+this.RomanTests("10", "x", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 11", SourceLine=8)]
+        public virtual void RomanTests_11()
+        {
+#line 2
+this.RomanTests("11", "xi", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 27", SourceLine=8)]
+        public virtual void RomanTests_27()
+        {
+#line 2
+this.RomanTests("27", "xxvii", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 29", SourceLine=8)]
+        public virtual void RomanTests_29()
+        {
+#line 2
+this.RomanTests("29", "xxix", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 30", SourceLine=8)]
+        public virtual void RomanTests_30()
+        {
+#line 2
+this.RomanTests("30", "xxx", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 31", SourceLine=8)]
+        public virtual void RomanTests_31()
+        {
+#line 2
+this.RomanTests("31", "xxxi", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 777", SourceLine=8)]
+        public virtual void RomanTests_777()
+        {
+#line 2
+this.RomanTests("777", "dcclxxvii", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 999", SourceLine=8)]
+        public virtual void RomanTests_999()
+        {
+#line 2
+this.RomanTests("999", "cmxcix", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 1999", SourceLine=8)]
+        public virtual void RomanTests_1999()
+        {
+#line 2
+this.RomanTests("1999", "mcmxcix", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 2021", SourceLine=8)]
+        public virtual void RomanTests_2021()
+        {
+#line 2
+this.RomanTests("2021", "mmxxi", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 4000", SourceLine=8)]
+        public virtual void RomanTests_4000()
+        {
+#line 2
+this.RomanTests("4000", "*throws exception*", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, 0", SourceLine=8)]
+        public virtual void RomanTests_0()
+        {
+#line 2
+this.RomanTests("0", "BLANK", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, -1", SourceLine=8)]
+        public virtual void RomanTests_1()
+        {
+#line 2
+this.RomanTests("-1", "*throws exception*", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Roman Tests, -100", SourceLine=8)]
+        public virtual void RomanTests_100()
+        {
+#line 2
+this.RomanTests("-100", "*throws exception*", ((string[])(null)));
 #line hidden
         }
     }
