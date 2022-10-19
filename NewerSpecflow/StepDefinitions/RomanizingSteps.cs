@@ -15,10 +15,9 @@ namespace NewerSpecflow.Features
         {
             _scenarioContext = scenarioContext;
         }
-        private int _number;
-        private string _result;
+        //private int _number;
+        //private string _result;
 
-        private readonly Class1 _definition = new Class1();
 
         //[Given(@"input of (.*)")]
         //public void GivenInputOf(int num)
@@ -26,9 +25,9 @@ namespace NewerSpecflow.Features
         //    _number = num;
         //}
         [Given(@"rawinput was (.*)")]
-        public void GivenRawinputWas(int p0)
+        public void GivenRawinputWas(int num)
         {
-            _number = p0;
+            _scenarioContext.Add("number", num);
 
         }
 
@@ -36,13 +35,26 @@ namespace NewerSpecflow.Features
         [When(@"converted to Roman numerals")]
         public void WhenConvertedToRomanNumerals()
         {
-            _result = _definition.Romanize(_number);
+            Class1 _definition = new Class1();
+            try
+            {
+                _scenarioContext.Add("result", _definition.Romanize(_scenarioContext.Get<int>("number")));
+            }
+            catch(ArgumentOutOfRangeException e)
+            {
+                _scenarioContext.Add("error", e);
+            }
         }
 
         [Then(@"Result should be Romanlanguage ""([^""]*)""")]
         public void ThenResultShouldBeRomanlanguage(string res)
         {
-        _result.Should().Be(res);
+            if(res == "*throws exception*")
+            {
+                _scenarioContext.Get<Exception>("error").Should().NotBeNull();
+            }
+            else
+            _scenarioContext.Get<string>("result").Should().Be(res);
         }
 
 

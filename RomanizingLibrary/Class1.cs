@@ -1,4 +1,6 @@
-﻿namespace RomanizingLibrary
+﻿using System;
+
+namespace RomanizingLibrary
 {
     public class Class1
     {
@@ -14,7 +16,7 @@
             }
             else if (number < 0 || number > 3999)
             {
-                return "*throws exception*";
+                throw new ArgumentOutOfRangeException();
             }
             else
             {
